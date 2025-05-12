@@ -65,6 +65,7 @@
                     </form>
                 </div>
                 
+                <!-- Results Section - Ensure these IDs match what's used in the script -->
                 <div class="hidden results-section" id="results-section">
                     <div class="results-container glass-panel">
                         <div class="result-header">
@@ -78,6 +79,16 @@
                             <div class="result-item disease">
                                 <div class="result-label">Disease Detected:</div>
                                 <div class="result-value" id="disease-name">-</div>
+                            </div>
+                            
+                            <div class="result-item confidence">
+                                <div class="result-label">Confidence Level:</div>
+                                <div class="confidence-meter">
+                                    <div class="confidence-bar">
+                                        <div class="confidence-progress" id="confidence-progress"></div>
+                                    </div>
+                                    <div class="confidence-value" id="confidence-value">-</div>
+                                </div>
                             </div>
                             
                             <div class="result-item treatment">

@@ -36,20 +36,27 @@ body {
 .app-container {
     display: flex;
     min-height: 100vh;
+    position: relative;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Sidebar Styles */
 .sidebar {
-    width: 20%;
+    width: var(--sidebar-width) !important; /* Force consistent width */
+    min-width: var(--sidebar-width); /* Prevent shrinking */
+    max-width: var(--sidebar-width); /* Prevent expanding */
     background-color: var(--bg-secondary);
     padding: 30px 20px;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Explicitly set min-height to full viewport height */
-    position: sticky; /* Make sidebar sticky */
+    min-height: 100vh;
+    position: sticky; /* Make sidebar stick to viewport */
     top: 0;
     left: 0;
+    flex-shrink: 0; /* Prevent flexbox from shrinking the sidebar */
 }
+
 
 .logo-container {
     display: flex;
@@ -79,7 +86,6 @@ body {
 .menu-items {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
 }
 
 .menu-item {
@@ -125,7 +131,11 @@ body {
     padding: 30px;
     overflow-y: auto;
     position: relative;
+    min-height: 100vh; /* Match sidebar height */
+    display: flex;
+    flex-direction: column;
 }
+
 
 .content-header {
     margin-bottom: 30px;
@@ -385,7 +395,11 @@ body {
     border-radius: 10px;
     border-left: 4px solid var(--accent-primary);
 }
-
+.page-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
 /* About Page Styles */
 #about-page h3 {
     color: var(--accent-primary);
@@ -484,59 +498,4 @@ body {
     100% { top: 0; }
 }
 
-/* Media Queries */
-@media (max-width: 900px) {
-    .sidebar {
-        width: 80px;
-        padding: 20px 10px;
-    }
-    
-    .logo-container {
-        justify-content: center;
-        padding-left: 0;
-    }
-    
-    .logo-icon {
-        margin-right: 0;
-    }
-    
-    .sidebar h1, .menu-item span, .app-info {
-        display: none;
-    }
-    
-    .menu-item {
-        justify-content: center;
-    }
-    
-    .menu-item i {
-        margin-right: 0;
-        font-size: 1.3rem;
-    }
-}
 
-@media (max-width: 600px) {
-    .main-content {
-        padding: 20px 15px;
-    }
-    
-    .glass-panel {
-        padding: 20px 15px;
-    }
-    
-    .upload-container {
-        min-height: 200px;
-    }
-    
-    .primary-btn {
-        padding: 12px 20px;
-        font-size: 0.9rem;
-    }
-    
-    .disease .result-value {
-        font-size: 1.5rem;
-    }
-    
-    .content-header h2 {
-        font-size: 1.5rem;
-    }
-}
