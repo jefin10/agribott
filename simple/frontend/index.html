@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriiBott - Smart Plant Disease Detection</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="sidebar">
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h1>AgriiBott</h1>
+            </div>
+            <div class="menu-items">
+                <div class="menu-item active">
+                    <i class="fas fa-bolt"></i>
+                    <span>Detect Disease</span>
+                </div>
+                <div class="menu-item" id="about-tab">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </div>
+            </div>
+            <div class="app-info">
+                <p>Powered by AI</p>
+                <p>© 2025 AgriiBott</p>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="page-content" id="detect-page">
+                <div class="content-header">
+                    <h2>Plant Disease Detection</h2>
+                    <p>Upload a plant image to analyze for diseases</p>
+                </div>
+                
+                <div class="upload-section glass-panel">
+                    <form id="upload-form">
+                        <div class="upload-container" id="dropzone">
+                            <input type="file" id="image-input" accept="image/*" hidden>
+                            <div class="upload-placeholder" id="upload-placeholder">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <h3>Drop your image here</h3>
+                                <p>Or <button id="browse-btn" class="browse-button">browse</button> to upload</p>
+                            </div>
+                            <div class="image-preview-container">
+                                <img id="preview" src="" alt="Preview" class="hidden">
+                                <button type="button" id="remove-image" class="hidden">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="upload-actions">
+                            <button type="submit" id="analyze-btn" class="primary-btn" disabled>
+                                <i class="fas fa-search"></i> Analyze Image
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="hidden results-section" id="results-section">
+                    <div class="results-container glass-panel">
+                        <div class="result-header">
+                            <h3><i class="fas fa-chart-pie"></i> Analysis Results</h3>
+                            <button type="button" id="new-scan" class="icon-button">
+                                <i class="fas fa-redo"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="result-content">
+                            <div class="result-item disease">
+                                <div class="result-label">Disease Detected:</div>
+                                <div class="result-value" id="disease-name">-</div>
+                            </div>
+                            
+                            <div class="result-item treatment">
+                                <div class="result-label">Recommended Treatment:</div>
+                                <div class="result-value" id="treatment-info">-</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="hidden loader" id="loader">
+        <div class="loader-content">
+            <div class="scanner">
+                <div class="scanner-bar"></div>
+            </div>
+            <p>Analyzing plant health...</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

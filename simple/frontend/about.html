@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriiBott - About</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="sidebar">
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h1>AgriiBott</h1>
+            </div>
+            <div class="menu-items">
+                <div class="menu-item" id="detect-tab">
+                    <i class="fas fa-bolt"></i>
+                    <span>Detect Disease</span>
+                </div>
+                <div class="menu-item active">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </div>
+            </div>
+            <div class="app-info">
+                <p>Powered by AI</p>
+                <p>© 2025 AgriiBott</p>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="page-content" id="about-page">
+                <div class="content-header">
+                    <h2>About AgriBott</h2>
+                    <p>Smart plant disease detection powered by AI</p>
+                </div>
+                
+                <div class="glass-panel">
+                    <h3>Project Overview</h3>
+                    <p>AgriBott is an advanced plant disease detection system that uses machine learning to identify plant diseases from images. The system helps farmers and gardeners quickly diagnose plant health problems and get recommendations for treatment.</p>
+                    
+                    <h3 class="mt-20">How It Works</h3>
+                    <p>Simply upload an image of a plant leaf, and our AI model will analyze it for signs of disease. The model has been trained on thousands of images from the PlantVillage dataset and can identify numerous common plant diseases with high accuracy.</p>
+                    
+                    <h3 class="mt-20">Technologies Used</h3>
+                    <p>AgriBott uses a machine learning model based on HistGradientBoostingClassifier with HOG feature extraction and PCA dimensionality reduction. The frontend is built with HTML, CSS, and JavaScript, while the backend runs on Flask.</p>
+                    
+                    <h3 class="mt-20">Benefits</h3>
+                    <ul>
+                        <li>Early detection of plant diseases</li>
+                        <li>Reduced crop losses</li>
+                        <li>Targeted treatment recommendations</li>
+                        <li>Simple and accessible interface</li>
+                        <li>Works with common crops like tomato, potato, corn, and apple</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="about-script.js"></script>
+</body>
+</html>
