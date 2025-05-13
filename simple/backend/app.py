@@ -7,12 +7,28 @@ from flask_cors import CORS
 from skimage.feature import hog
 
 # Load model
-MODEL_PATH = os.path.join(os.path.dirname(__file__), "plant_disease_model_compact.pkl")
-with open(MODEL_PATH, 'rb') as f:
-    model_data = pickle.load(f)
-clf = model_data['classifier']
-pca = model_data['pca']
-classes = model_data['classes']
+try:
+    MODEL_PATH = os.path.join(os.path.dirname(__file__), "plant_disease_model_compact.pkl")
+    print(f"Looking for model at: {MODEL_PATH}")
+    
+    if os.path.exists(MODEL_PATH):
+        print("Model file found!")
+        with open(MODEL_PATH, 'rb') as f:
+            try:
+                model_data = pickle.load(f)
+                clf = model_data['classifier']
+                pca = model_data['pca']
+                classes = model_data['classes']
+                print(f"Model loaded successfully with {len(classes)} classes")
+            except Exception as e:
+                print(f"Error loading model: {e}")
+                raise
+    else:
+        print(f"Model file not found at {MODEL_PATH}")
+        raise FileNotFoundError(f"Model file not found at {MODEL_PATH}")
+except Exception as e:
+    print(f"Failed to load model: {e}")
+    raise
 
 # Treatment recommendations (add more as needed)
 TREATMENTS = {

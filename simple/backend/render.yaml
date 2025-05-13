@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: agribott-backend
+    runtime: python
+    buildCommand: pip install -r simple/backend/requirements-render.txt
+    startCommand: cd simple/backend && gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.7
